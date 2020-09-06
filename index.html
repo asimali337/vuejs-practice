@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="scripts/vue.js"></script>
+  </head>
+  <body>
+    <div id="our-app">
+      hello and welcome to me website i am {{fname}} {{lname}} and {{message}}
+    </div>
+
+    <script>
+      var myApp = new Vue({
+        el: "#our-app",
+        data: {
+          message: "this is my first vuejs code",
+          fname: "Asim",
+          lname: "Ali",
+        },
+      });
+    </script>
+  </body>
+</html>
