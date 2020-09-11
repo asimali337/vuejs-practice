@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .imgStyle{
+            width: 200px;
+            height: 200px;
+        }
+        .headingColor{
+            color: #39B983;
+            border-bottom: 1px solid #ddd;
+        }
+        .formStyle{
+            width: 620px;
+            padding: 20px;
+            margin:20px;
+            border:1px solid #39B983;
+            border-radius: 10px;
+            color: #ffffff;
+            background: #39B983;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="wrapper">
+    <div class="row">
+        <div class="col-12">
+            <h3 v-bind:class="setColor">HTML Attribute Bining</h3>
+            <br>
+            <a v-bind:href="ulink" v-bind:title="title">{{ name }}</a>
+            <br>
+            <img v-bind:src="logoImg1" style="width: 70px;height: 70px; border: 2px solid #39B983;" alt="vue-logo">
+        </div>
+        <div class="col-12">
+            <h3 v-bind:class="setColor">HTML Class Binding</h3>
+            <img v-bind:src="logoImg2" v-bind:class="{imgStyle:isActive}" alt="">
+        </div>
+        <div class="col-12">
+            <h3 v-bind:class="setColor">Form Input Binding</h3>
+            <form class="form-inline formStyle" >
+                <div class="form-group">
+                    <label>Name: </label>
+                    <input type="text" v-bind:value="formName" class="form-control" aria-describedby="helpId">
+                    <label>Email: </label>
+                    <input type="text" v-bind:value="formEmail" class="form-control" aria-describedby="helpId">
+                    <button type="button" class="btn btn-warning">Click Me</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12">
+            <h3 v-bind:class="setColor">HTML Content Binding</h3>
+            <div v-html="htmlContent"></div>
+        </div>
+    </div>
+</div>
+<script src="lib/vue.js"></script>
+<script>
+    let myApp = new Vue({
+        el:"#wrapper",
+        data:{
+            name:"Link",
+            title:"This is link",
+            ulink:'http://www.google.com',
+            isActive:true,
+            logoImg1:"images/vuejs-logo.png",
+            logoImg2:"images/logo.png",
+            setColor:"headingColor",
+            formName:"Asim",
+            formEmail:"asim@email.com",
+            htmlContent:"<p style='background: #ddd; color: #39B983; padding: 10px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dignissimos ipsa maxime nemo nisi repudiandae suscipit ut. Accusantium fuga magni voluptas! Ab asperiores doloribus libero natus nesciunt quidem totam ullam?</p>",
+            records:[
+                {fname:'fname1', lname:'lname1',email:'name1@email.com'},
+                {fname:'fname2', lname:'lname2',email:'name2@email.com'},
+                {fname:'fname3', lname:'lname3',email:'name3@email.com'}
+            ]
+
+        }
+
+    });
+</script>
+</body>
+</html>
