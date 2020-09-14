@@ -15,6 +15,21 @@ var myApp = new Vue({
         moveFunction:function (event) {
             this.x = event.offsetX;
             this.y = event.offsetY;
+        },
+        mouseOverFunction:function (event) {
+            console.log('Message is from mouse over event');
+        },
+        mouseOutFunction:function (event) {
+            console.log('Mouse out function called');
+        },
+        keypressFunction:function () {
+            console.log("Key Pressed");
+        },
+        keyupFunction:function () {
+            console.log("Key Up");
+        },
+        keydownFunction:function () {
+            console.log("Key Down");
         }
 
     }

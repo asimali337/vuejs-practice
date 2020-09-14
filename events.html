@@ -9,6 +9,11 @@
             height: 150px;
             width: 150px;
         }
+        .move-area{
+            -webkit-box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.75);
+        }
     </style>
 </head>
 <body>
@@ -17,21 +22,40 @@
         <div class="row" style="margin-top: 40px;">
             <div class="col-6">
                 <h3>Function Event</h3>
+                <h3 class="alert alert-success my-2" style="border: 1px solid #155724;">Counter : {{ counter }}</h3>
                 <button type="button" @click="increment(1)" name="increment" class="btn btn-success">Increment by <h1>1</h1></button>
                 <button type="button" v-on:click="decrement(1)" name="decrement" class="btn btn-success">Decrement by <h1>1</h1></button>
                 <br>
                 <br>
                 <button type="button" @click="increment(5)" name="increment" class="btn btn-primary">Increment by <h1>5</h1></button>
                 <button type="button" v-on:click="decrement(5)" name="increment" class="btn btn-primary">Decrement by <h1>5</h1></button>
-                <h3 class="alert alert-success my-2">Counter : {{ counter }}</h3>
+                <button type="button" class="btn btn-danger" @mouseover="mouseOverFunction" @mouseout="mouseOutFunction">Mouse Events</button>
             </div>
             <div class="col-6">
                 <h3>Mouse Event</h3>
-                <div class="alert alert-primary move-area" @mousemove="moveFunction" style="width: 400px;height: 400px; border: 2px solid #005cbf">
-                    <span>{{ x }},{{ y }}</span>
+                <div class="alert alert-primary move-area" @mousemove="moveFunction" style="width: 400px;height: 400px; border: 1px solid #005cbf">
+                    <h4>{{ x }},{{ y }}</h4>
                 </div>
             </div>
         </div>
+        <div class="row" style="margin: 40px 0">
+            <div class="col-6" style="border: 1px solid #c4c4c4; padding: 20px; border-radius: 5px;">
+                <h3>Keyboard Events</h3>
+                <div class="form-group">
+                    <label>Key Press</label>
+                    <input type="text" class="form-control" @keypress="keypressFunction"  placeholder="Key Press..." aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label>Key Up</label>
+                    <input type="text" class="form-control" @keyup="keyupFunction" placeholder="Key Up..." aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label>Key Down</label>
+                    <input type="text" class="form-control" @keydown="keydownFunction" placeholder="Key Down..." aria-describedby="helpId">
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
