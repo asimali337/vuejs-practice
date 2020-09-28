@@ -10,8 +10,21 @@
 <div id="wrapper">
     <div class="container">
         <div class="row" style="margin-top: 40px;">
-            <div class="col-6">
-
+            <div class="col-6 p-3 alert-success">
+                <h4>Instance One Space</h4>
+                <div id="instanceOne">
+                    <p>Own Title: {{ title }}</p>
+                    <p>{{commonFunction()}}</p>
+                </div>
+            </div>
+            <div class="col-6 p-3 alert-primary">
+                <h4>Instance Two Space</h4>
+                <div id="instanceTwo">
+                    <p>Own Title: {{ title }}</p>
+                    <p>{{commonFunction()}}</p>
+                    <p>Title From instance One {{titleFromInstance1}}</p>
+                    <p class="font-weight-bold">Addition: {{addTwoWholeNumbers()}}</p>
+                </div>
             </div>
         </div>
     </div>
